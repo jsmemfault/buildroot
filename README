@@ -24,3 +24,16 @@ You can also find us on #buildroot on OFTC IRC.
 
 If you would like to contribute patches, please read
 https://buildroot.org/manual.html#submitting-patches
+
+### Memfault Quickstart
+
+The `memfault_qs_defconfig` under configs provides a QEMU (x86)
+default config for evaluation of the
+[Memfault Linux SDK](https://github.com/memfault/memfault-linux-sdk)
+in buildroot projects.  Example:
+
+```
+BR2_EXTERNAL=<memfault_linux_sdk_root>/buildroot make memfault_qs_defconfig
+```
+
+Enjoy!
