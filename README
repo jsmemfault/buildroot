@@ -33,7 +33,18 @@ default config for evaluation of the
 in buildroot projects.  Example:
 
 ```
-BR2_EXTERNAL=<memfault_linux_sdk_root>/buildroot make memfault_qs_defconfig
+# BR2_EXTERNAL=<memfault_linux_sdk_root>/buildroot make memfault_qs_defconfig
+# make
 ```
+
+NOTE: The unstripped binaries found in the output/staging directory can be
+uploaded using the memfault cli tool's upload-elf functionality.  (TODO:
+automate creation of staging tarball)
+
+NOTE: The current/default cargo behavior creates two versions of
+memfault* binaries - `Debug` and `Release`, each with a unique build id.
+The `Release` versions are currently used to populate the output rootfs.
+(TODO: Find way to reconcile separate build-ids and populate output/staging
+and output/target with their corresponding binaries)
 
 Enjoy!
